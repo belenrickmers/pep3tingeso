@@ -1,8 +1,13 @@
 package com.example.demo.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Suma {
+    @SerializedName("operando1")
     private int operando1;
+    @SerializedName("operando2")
     private int operando2;
+    @SerializedName("resultado")
     private int resultado;
 
     public int getOperando1() {

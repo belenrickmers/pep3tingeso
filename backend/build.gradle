@@ -16,8 +16,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'com.google.code.gson:gson:2.8.6'
+	implementation 'junit:junit:4.12'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile 'org.springframework.boot:spring-boot-starter-validation'
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testRuntime ('org.springframework.boot:spring-boot-starter-test')
 }
 
 test {
