@@ -1,88 +1,78 @@
 <template>
-<v-container>
-  <v-form v-model="valid">
-    <v-container mt-12>
-      <v-col cols="12" md="6">
-        <center><v-title > Calculadora suma </v-title></center>
-        <v-row rows="12" md="4">
-          <v-text-field
-            v-model="operando1"
-            :rules="numberRules"
-            label="Primer operando"
-          ></v-text-field>
-        </v-row>
+  <v-container fluid ma-0 pa-0 fill-height class="black">
+    
+    <v-row align="center"
+      justify="center"> 
+      <v-card class="pa-lg-4 mx-lg-16" width='300'>
+        <v-form v-model="valid">
+            <v-card-title class="justify-center"> Calculadora suma </v-card-title>
 
-        <v-row rows="12" md="4">
-          <v-text-field
-            v-model="operando2"
-            :rules="numberRules"
-            label="Segundo operando"
-          ></v-text-field>
-        </v-row>
+              <v-text-field
+                v-model="operando1"
+                :rules="numberRules"
+                label="Primer operando"
+              ></v-text-field>
 
-        <v-row rows="12" md="4">
-          <v-text-field
-            v-model="resultado"
-            label="Resultado"
-            disabled
-          >
-          </v-text-field>
-        </v-row>
-        <v-row>
-          <v-btn
-            class="mt-2"
-            justify="center"
-            width="40%"
-            color="primary"
-            v-on:click="calcularSuma"
-            :style="{left: '50%', transform:'translateX(-50%)'}"
-          >
-            Calcular suma
-          </v-btn>
-        </v-row>
-      </v-col>
-    </v-container>
-  </v-form>
-  <v-form>
-    <v-container>
-      <v-col cols="12" md="6">
-        <center><v-title > Calculadora factorial </v-title></center>
-        <v-row rows="12" md="4">
-          <v-text-field
-            v-model="operandoFact"
-            :rules="numberRules"
-            label="Operando"
-          ></v-text-field>
-        </v-row>
 
-        <v-row rows="12" md="4">
-          <v-text-field
-            v-model="resultadoFact"
-            label="Resultado"
-            disabled
-          >
-          </v-text-field>
-        </v-row>
-        <v-row>
-          <v-btn
-            class="mt-2"
-            justify="center"
-            width="40%"
-            color="primary"
-            v-on:click="calcularFactorial"
-            :style="{left: '50%', transform:'translateX(-50%)'}"
-          >
-            Calcular factorial
-          </v-btn>
-        </v-row>
-      </v-col>
-    </v-container>
-  </v-form>
+
+              <v-text-field
+                v-model="operando2"
+                :rules="numberRules"
+                label="Segundo operando"
+              ></v-text-field>
+
+
+
+              <v-text-field v-model="resultado" label="Resultado" disabled>
+              </v-text-field>
+
+
+              <v-btn
+                class="mt-2"
+                justify="center"
+                width="80%"
+                color="primary"
+                v-on:click="calcularSuma"
+                :style="{ left: '50%', transform: 'translateX(-50%)' }"
+              >
+                Calcular suma
+              </v-btn>
+
+        </v-form>
+      </v-card>
+
+      <v-form>
+        <v-card class="pa-lg-4 mx-lg-5" width='300'>
+            <v-card-title class="justify-center"> Calculadora factorial </v-card-title>
+              <v-text-field
+                v-model="operandoFact"
+                :rules="numberRules"
+                label="Operando"
+              ></v-text-field>
+
+
+              <v-text-field v-model="resultadoFact" label="Resultado" disabled>
+              </v-text-field>
+
+
+              <v-btn
+                class="mt-2"
+                justify="center"
+                width="80%"
+                color="primary"
+                v-on:click="calcularFactorial"
+                :style="{ left: '50%', transform: 'translateX(-50%)' }"
+              >
+                Calcular factorial
+              </v-btn>
+        </v-card>
+      </v-form>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data: () => ({
@@ -95,20 +85,29 @@ export default {
     resultadoFact: null,
   }),
   methods: {
-    calcularSuma: function(){
-      axios.post('http://localhost:1818/suma',{operando1: this.operando1, operando2:this.operando2}).then(response=>{
-      this.resultado = response.data.resultado;
-      })
+    calcularSuma: function () {
+      axios
+        .post("http://localhost:1818/suma", {
+          operando1: this.operando1,
+          operando2: this.operando2,
+        })
+        .then((response) => {
+          this.resultado = response.data.resultado;
+        });
       console.log(this.resultado);
-      },
+    },
 
-    calcularFactorial: function(){
-      axios.post('http://localhost:1818/factorial',{operando: this.operandoFact}).then(response=>{
-      this.resultadoFact = response.data.resultado;
-      })
+    calcularFactorial: function () {
+      axios
+        .post("http://localhost:1818/factorial", {
+          operando: this.operandoFact,
+        })
+        .then((response) => {
+          this.resultadoFact = response.data.resultado;
+        });
       console.log(this.resultadoFact);
-      },
-    
+    },
+
     save(date) {
       this.$refs.menu.save(date);
     },
