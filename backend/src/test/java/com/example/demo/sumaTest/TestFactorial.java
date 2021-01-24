@@ -42,7 +42,7 @@ public class TestFactorial extends AbstractTest{
         String factRes = mvcResult.getResponse().getContentAsString();
         Suma factFinal = gson.fromJson(factRes, Suma.class);
 
-        assertEquals(factFinal.getResultado(),24);
+        assertEquals(24, factFinal.getResultado());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class TestFactorial extends AbstractTest{
         String factRes = mvcResult.getResponse().getContentAsString();
         Suma factFinal = gson.fromJson(factRes, Suma.class);
 
-        assertEquals(factFinal.getResultado(),6);
+        assertEquals(6, factFinal.getResultado());
     }
 
     @Test
@@ -82,7 +82,7 @@ public class TestFactorial extends AbstractTest{
         String factRes = mvcResult.getResponse().getContentAsString();
         Suma factFinal = gson.fromJson(factRes, Suma.class);
 
-        assertEquals(factFinal.getResultado(),5040);
+        assertEquals(5040, factFinal.getResultado());
     }
 
     @Test
@@ -102,6 +102,6 @@ public class TestFactorial extends AbstractTest{
         String factRes = mvcResult.getResponse().getContentAsString();
         Suma factFinal = gson.fromJson(factRes, Suma.class);
 
-        assertEquals(factFinal.getResultado(),1);
+        assertEquals(1, factFinal.getResultado());
     }
 }

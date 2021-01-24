@@ -46,7 +46,7 @@ public class TestSuma extends AbstractTest {
         String sumaRes = mvcResult.getResponse().getContentAsString();
         Suma sumaFinal = gson.fromJson(sumaRes, Suma.class);
 
-        assertEquals(sumaFinal.getResultado(),-1);
+        assertEquals(-1, sumaFinal.getResultado());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class TestSuma extends AbstractTest {
         String sumaRes = mvcResult.getResponse().getContentAsString();
         Suma sumaFinal = gson.fromJson(sumaRes, Suma.class);
 
-        assertEquals(sumaFinal.getResultado(),1000001);
+        assertEquals(1000001, sumaFinal.getResultado());
     }
 
     @Test
@@ -88,7 +88,7 @@ public class TestSuma extends AbstractTest {
         String sumaRes = mvcResult.getResponse().getContentAsString();
         Suma sumaFinal = gson.fromJson(sumaRes, Suma.class);
 
-        assertEquals(sumaFinal.getResultado(),300);
+        assertEquals(300, sumaFinal.getResultado());
     }
 
     @Test
@@ -109,6 +109,6 @@ public class TestSuma extends AbstractTest {
         String sumaRes = mvcResult.getResponse().getContentAsString();
         Suma sumaFinal = gson.fromJson(sumaRes, Suma.class);
 
-        assertEquals(sumaFinal.getResultado(),0);
+        assertEquals(0, sumaFinal.getResultado());
     }
 }
