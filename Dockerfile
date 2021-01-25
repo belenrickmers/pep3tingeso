@@ -2,16 +2,16 @@ FROM ubuntu:18.04
 RUN apt-get update
 
 #instalacion de java
-RUN sudo apt install -y default-jre
-RUN sudo apt install -y default-jdk 
+RUN apt install -y default-jre
+RUN apt install -y default-jdk 
 
 #instalacion de node
-RUN sudo apt-get install -y curl 
+RUN apt-get install -y curl 
 RUN curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
-RUN sudo apt-get install -y nodejs
+RUN apt-get install -y nodejs
 
 #intalacion de npm
-RUN sudo apt install -y npm git
+RUN apt install -y npm git
 
 #instalar gradle
 RUN curl -s "https://get.sdkman.io" | bash
