@@ -1,12 +1,9 @@
+FROM openjdk:15.0.1-oracle
 
-FROM openjdk:15
+COPY /build/libs/demo-0.0.1-SNAPSHOT.jar demo-0.0.1-SNAPSHOT.jar
 
-COPY . .
-
-RUN ./gradlew build
-
+COPY docker-entrypoint.sh /
 
 RUN chmod +x docker-entrypoint.sh
-
 
 ENTRYPOINT ["bash", "docker-entrypoint.sh"]
