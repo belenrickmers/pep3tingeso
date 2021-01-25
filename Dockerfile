@@ -32,6 +32,7 @@ ENV PATH $PATH:/opt/gradle-6.8.1/bin
 
 RUN git clone https://github.com/belenrickmers/pep3tingeso.git
 WORKDIR /pep3tingeso/frontenddos/
+RUN ls
 RUN npm install
 RUN npm install axios
 RUN npm run serve
