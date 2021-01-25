@@ -13,7 +13,7 @@ COPY package*.json ./
 RUN npm install
 
 # copy project files and folders to the current working directory (i.e. 'app' folder)
-COPY /pep3tingeso/frontenddos .
+COPY . .
 
 # build app for production with minification
 RUN npm run build
