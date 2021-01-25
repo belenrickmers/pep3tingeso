@@ -1,4 +1,5 @@
-FROM gradle:6.8.1
+
+FROM openjdk:15
 
 COPY . .
 
