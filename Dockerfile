@@ -7,6 +7,7 @@ RUN apt install -y default-jdk
 
 #instalacion de node
 RUN apt-get install -y curl
+RUN /bin/bash -c "curl -sL https://deb.nodesource.com/setup_15.x"
 RUN apt-get install -y nodejs
 RUN apt-get install unzip
 RUN apt-get install zip
@@ -30,15 +31,10 @@ RUN wget -q https://services.gradle.org/distributions/gradle-6.8.1-bin.zip \
 ENV GRADLE_HOME /opt/gradle-6.8.1
 ENV PATH $PATH:/opt/gradle-6.8.1/bin
 
+
 RUN git clone https://github.com/belenrickmers/pep3tingeso.git
 WORKDIR /pep3tingeso/frontenddos/
 RUN ls
-RUN apt-get install -y git-core curl build-essential openssl libssl-dev \
- && git clone https://github.com/nodejs/node.git \
- && cd node \
- && ./configure \
- && make \
- && sudo make install
 RUN npm install
 RUN npm install axios
 RUN npm run serve
