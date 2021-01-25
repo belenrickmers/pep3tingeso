@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prueba-deployment
+  labels:
+    app: prueba
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prueba
+  template:
+    metadata:
+      labels:
+        app: prueba
+    spec:
+      containers:
+      - name: prueba
+        image: prueba:latest
+        ports:
+        - containerPort: 8080
+        - targetPort: 80
