@@ -9,6 +9,7 @@ RUN apt install -y default-jdk
 RUN apt-get install -y curl
 RUN apt-get install -y nodejs
 RUN apt-get install unzip
+RUN apt-get install zip
 RUN apt-get update
 
 #intalacion de npm
