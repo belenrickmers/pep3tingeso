@@ -1,5 +1,5 @@
 FROM openjdk:15
-COPY /pep3tingeso/backend/ backend
+COPY . .
 
 RUN chmod +x gradlew
 RUN ./gradlew assemble
