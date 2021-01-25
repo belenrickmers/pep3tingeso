@@ -18,6 +18,7 @@ RUN apt install -y npm git
 #instalar gradle
 RUN curl -s "https://get.sdkman.io" | bash
 RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh"
+RUN /bin/bash -c "chmod a+x $HOME/.sdkman/bin/sdkman-init.sh"
 RUN apt-get update
 RUN /bin/bash -c "sdk install gradle 6.8.1"
 
