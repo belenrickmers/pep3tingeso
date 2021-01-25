@@ -10,17 +10,37 @@ RUN apt-get install -y curl
 RUN apt-get install -y nodejs
 RUN apt-get install unzip
 RUN apt-get install zip
+RUN apt-get install wget
 RUN apt-get update
 
 #intalacion de npm
 RUN apt install -y npm git
 
 #instalar gradle
-RUN curl -s "https://get.sdkman.io" | bash
-RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh"
-RUN /bin/bash -c "chmod a+x $HOME/.sdkman/bin/sdkman-init.sh"
 RUN apt-get update
-RUN sdk install gradle 6.8.1
+RUN bash -c ' \
+    set -euxo pipefail && \
+    apt-get update && \
+    pkg="openjdk-$JAVA_VERSION"; \
+    if [ "$JAVA_RELEASE" = "JDK" ]; then \
+        pkg="$pkg-jdk-headless"; \
+    else \
+        pkg="$pkg-jre-headless"; \
+    fi; \
+    apt-get install -y --no-install-recommends wget unzip "$pkg" && \
+    apt-get clean'
+
+
+CMD /bin/bash
+
+#install Gradle
+RUN wget -q https://services.gradle.org/distributions/gradle-4.5.1-bin.zip \
+    && unzip gradle-4.5.1-bin.zip -d /opt \
+    && rm gradle-4.5.1-bin.zip
+
+# Set Gradle in the environment variables
+ENV GRADLE_HOME /opt/gradle-4.5.1
+ENV PATH $PATH:/opt/gradle-4.5.1/bin
 
 RUN git clone https://github.com/belenrickmers/pep3tingeso.git
 WORKDIR /pep3tingeso/frontenddos/
