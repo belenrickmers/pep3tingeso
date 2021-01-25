@@ -6,8 +6,6 @@ RUN apt install -y default-jre
 RUN apt install -y default-jdk 
 
 #instalacion de node
-RUN apt-get install -y curl 
-RUN curl -sL https://deb.nodesource.com/setup_15.x | -E bash -
 RUN apt-get install -y nodejs
 
 #intalacion de npm
