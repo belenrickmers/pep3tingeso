@@ -23,6 +23,7 @@ public class SumaService {
         Suma suma = gson.fromJson(request,Suma.class);
         int resultado = suma.sumarValores(suma.getOperando1(), suma.getOperando2());
         suma.setResultado(resultado);
+        System.out.println("prueba1");
         return new ResponseEntity<>(gson.toJson(suma), HttpStatus.OK);
 
     }
