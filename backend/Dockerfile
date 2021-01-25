@@ -3,6 +3,6 @@ COPY . .
 
 RUN chmod +x gradlew
 RUN ./gradlew assemble
-RUN ./gradlew bootrun
+CMD {"./gradlew bootrun"}
 
 EXPOSE 1818
