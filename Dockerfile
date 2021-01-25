@@ -20,7 +20,7 @@ RUN curl -s "https://get.sdkman.io" | bash
 RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh"
 RUN /bin/bash -c "chmod a+x $HOME/.sdkman/bin/sdkman-init.sh"
 RUN apt-get update
-RUN /bin/bash -c "sdk install gradle 6.8.1"
+RUN sdk install gradle 6.8.1
 
 RUN git clone https://github.com/belenrickmers/pep3tingeso.git
 WORKDIR /pep3tingeso/frontenddos/
