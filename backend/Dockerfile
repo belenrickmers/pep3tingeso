@@ -5,7 +5,6 @@ COPY . .
 
 RUN ./gradlew build
 
-COPY /backend/build/libs/demo-0.0.1-SNAPSHOT.jar demo-0.0.1-SNAPSHOT.jar
 
 COPY docker-entrypoint.sh /
 
