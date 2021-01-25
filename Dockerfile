@@ -19,23 +19,6 @@ RUN apt install -y npm git
 #instalar gradle
 RUN apt-get update
 
-ARG JAVA_VERSION=15
-ARG JAVA_RELEASE=JDK
-
-ENV JAVA_HOME=/usr
-RUN bash -c ' \
-    set -euxo pipefail && \
-    apt-get update && \
-    pkg="openjdk-$JAVA_VERSION"; \
-    if [ "$JAVA_RELEASE" = "JDK" ]; then \
-        pkg="$pkg-jdk-headless"; \
-    else \
-        pkg="$pkg-jre-headless"; \
-    fi; \
-    apt-get install -y --no-install-recommends wget unzip "$pkg" && \
-    apt-get clean'
-
-
 CMD /bin/bash
 
 #install Gradle
