@@ -1,4 +1,4 @@
-FROM openjdk:15
+FROM gradle:6.8.1
 RUN chmod +x gradlew
 RUN ./gradlew build
 
