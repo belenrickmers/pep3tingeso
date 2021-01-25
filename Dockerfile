@@ -18,6 +18,11 @@ RUN apt install -y npm git
 
 #instalar gradle
 RUN apt-get update
+
+ARG JAVA_VERSION=15
+ARG JAVA_RELEASE=JDK
+
+ENV JAVA_HOME=/usr
 RUN bash -c ' \
     set -euxo pipefail && \
     apt-get update && \
@@ -34,13 +39,13 @@ RUN bash -c ' \
 CMD /bin/bash
 
 #install Gradle
-RUN wget -q https://services.gradle.org/distributions/gradle-4.5.1-bin.zip \
-    && unzip gradle-4.5.1-bin.zip -d /opt \
-    && rm gradle-4.5.1-bin.zip
+RUN wget -q https://services.gradle.org/distributions/gradle-6.8.1-bin.zip \
+    && unzip gradle-6.8.1-bin.zip -d /opt \
+    && rm gradle-6.8.1-bin.zip
 
 # Set Gradle in the environment variables
-ENV GRADLE_HOME /opt/gradle-4.5.1
-ENV PATH $PATH:/opt/gradle-4.5.1/bin
+ENV GRADLE_HOME /opt/gradle-6.8.1
+ENV PATH $PATH:/opt/gradle-6.8.1/bin
 
 RUN git clone https://github.com/belenrickmers/pep3tingeso.git
 WORKDIR /pep3tingeso/frontenddos/
