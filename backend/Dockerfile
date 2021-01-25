@@ -1,5 +1,5 @@
 FROM gradle:6.8.1
-RUN chmod +x gradlew
+
 RUN ./gradlew build
 
 COPY /backend/build/libs/demo-0.0.1-SNAPSHOT.jar demo-0.0.1-SNAPSHOT.jar
