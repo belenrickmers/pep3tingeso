@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: belenrickmers/front
+          image: belenrickmers/front1
           lifecycle:
             preStop:
               exec:
