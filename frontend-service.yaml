@@ -5,9 +5,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: prueba
+    app: frontend
   ports:
     - protocol: TCP
       nodePort: 32000
       port: 8080
-      targetPort: 8080
+      targetPort: 8081
