@@ -18,6 +18,7 @@ spec:
         - name: frontend
           image: belenrickmers/front
           ports:
-            - containerPort: 8080
+            - name: http
+              containerPort: 8080
 
 
