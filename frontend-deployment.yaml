@@ -15,9 +15,9 @@ spec:
         app: frontend
     spec:
       containers:
-        name: frontend
-        image: frontend2
-        ports:
-        - containerPort: 8080
-        - targetPort: 8080
+        - name: frontend
+          image: frontend2
+          ports:
+            - containerPort: 8080
+            - targetPort: 8080
 
