@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: localhost
 spec:
-  type: Loadbalancer
+  type: LoadBalancer
   selector:
     app: prueba
   ports:
