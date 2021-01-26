@@ -15,9 +15,8 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend
-        image: backend16
-        ports:
-        - containerPort: 1818
-        - targetPort: 1818
+        - name: backend
+          image: backend16
+          ports:
+            - containerPort: 1818
 
