@@ -19,5 +19,5 @@ spec:
           image: frontend2
           ports:
             - containerPort: 8080
-            - targetPort: 8080
+              targetPort: 8080
 
