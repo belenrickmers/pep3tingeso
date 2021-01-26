@@ -10,6 +10,5 @@ spec:
     app: backend
   ports:
     - protocol: TCP
-      nodePort: 30000
       port: 1818
       targetPort: 1818
