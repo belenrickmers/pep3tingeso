@@ -18,5 +18,6 @@ spec:
         - name: backend
           image: belenrickmers/back
           ports:
-            - containerPort: 1818
+            - name: http
+              containerPort: 1818
 
