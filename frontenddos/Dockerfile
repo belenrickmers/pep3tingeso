@@ -1,5 +1,8 @@
 # etapa de compilación
-FROM node:9.11.1-alpine as build-stage
+FROM node:lts-alpine as build-stage
+
+# install simple http server for serving static content
+RUN npm install -g http-server
 WORKDIR /frontenddos
 COPY package*.json ./
 RUN npm install
