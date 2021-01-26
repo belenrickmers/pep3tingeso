@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prueba-deployment
+  name: frontend-deployment
   labels:
-    app: prueba
+    app: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prueba
+      app: frontend
   template:
     metadata:
       labels:
-        app: prueba
+        app: frontend
     spec:
       containers:
-      - name: prueba
-        image: prueba:latest
+      - name: frontend
+        image: frontend2
         ports:
         - containerPort: 8080
-        - targetPort: 80
+        - targetPort: 8080
+
