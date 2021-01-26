@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend
+  name: localhost
+  labels:
+    app: backend
 spec:
+  type: ClusterIP
   selector:
     app: backend
-    tier: backend
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: http
+    - name: http
+      protocol: TCP
+      port: 1818
+      targetPort: 1818

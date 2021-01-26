@@ -1,26 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: frontend-deployment
+  labels:
+    app: frontend
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
-      tier: frontend
-      track: stable
-  replicas: 1
   template:
     metadata:
       labels:
         app: frontend
-        tier: frontend
-        track: stable
     spec:
       containers:
-        - name: nginx
-          image: belenrickmers/front1
-          lifecycle:
-            preStop:
-              exec:
-                command: ["/usr/sbin/nginx","-s","quit"]
+        - name: frontend
+          image: belenrickmers/front
+          ports:
+            - containerPort: 8080
+
 
