@@ -8,6 +8,6 @@ spec:
     app: prueba
   ports:
     - protocol: TCP
-      nodePort: 8081
+      nodePort: 32000
       port: 8080
       targetPort: 8080

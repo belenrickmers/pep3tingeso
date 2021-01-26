@@ -8,6 +8,6 @@ spec:
     app: prueba
   ports:
     - protocol: TCP
-      nodePort: 1818
+      nodePort: 30000
       port: 1818
       targetPort: 1818
