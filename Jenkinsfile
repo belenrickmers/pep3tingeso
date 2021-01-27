@@ -29,7 +29,6 @@ pipeline {
             }
         }
         stage('Build-frontend'){
-            agent { docker 'openjdk:8-jdk-alpine' }
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
