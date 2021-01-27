@@ -39,7 +39,7 @@ pipeline {
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
                     sh "docker build . -t front-image"
-                    sh "docker front-image belenrickmers/front3"
+                    sh "docker tag front-image belenrickmers/front3"
                     sh "docker push belenrickmers/front3"
                     //script {
                         //frontImage = docker.build registry1
@@ -59,7 +59,7 @@ pipeline {
                     sh "./gradlew build"
                     sh "docker build . -t backend-image"
                 }
-                sh "docker backend-image belenrickmers/back3"
+                sh "docker tag backend-image belenrickmers/back3"
                 sh "docker push belenrickmers/back3"
                 echo "voy a salir de Build-backend"
             }
