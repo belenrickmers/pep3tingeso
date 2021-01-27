@@ -18,6 +18,7 @@ pipeline {
         stage('Test-backend'){
             steps{
                 echo "entre a Test-backend"
+                echo "entre a Test-backend"
                 sh "ls"
                 sh "cd backend"
                 sh 'probando'
