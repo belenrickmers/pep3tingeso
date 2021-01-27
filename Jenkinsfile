@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools{
         gradle 'GRADLE'
-        docker 'DOCKER'
+        dockerTool 'DOCKER'
     }
     options {
         skipStagesAfterUnstable()
