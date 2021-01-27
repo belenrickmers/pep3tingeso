@@ -19,6 +19,7 @@ pipeline {
                 echo "PORFAVORFUNCIONA"
                 echo "entre a pull-repositorio"
                 sh "git pull origin main"
+                sh "docker --version"
                 echo "voy a salir de pull-repositorio"
             }
         }
