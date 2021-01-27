@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        registry1 = "belenrickmers/back3"
-        registry2 = "belenrickmers/front3"
+        registry1 = "belenrickmers/front3"
+        registry2 = "belenrickmers/back3"
         registryCredential = 'docker'
         frontImage = ''
         backImage = ''
@@ -19,7 +19,6 @@ pipeline {
                 echo "PORFAVORFUNCIONA"
                 echo "entre a pull-repositorio"
                 sh "git pull origin main"
-                sh "docker --version"
                 echo "voy a salir de pull-repositorio"
             }
         }
@@ -39,6 +38,7 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
+                    sh "docker build . -t front3"
                     script {
                         frontImage = docker.build registry1 + ":$BUILD_NUMBER"
                         docker.withRegistry( '', registryCredential ) {
