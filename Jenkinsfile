@@ -9,7 +9,6 @@ pipeline {
     }
     tools{
         gradle 'GRADLE'
-        dockerTool 'DOCKER'
     }
     options {
         skipStagesAfterUnstable()
