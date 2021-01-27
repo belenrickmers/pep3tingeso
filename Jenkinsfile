@@ -21,6 +21,7 @@ pipeline {
                 echo "entre a Test-backend"
                 sh "ls"
                 dir("backend") {
+                    sh 'chmod +x ./gradlews'
                     sh './gradlew test'
                 }
                 sh "cd .."
