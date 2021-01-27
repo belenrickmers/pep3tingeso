@@ -28,10 +28,10 @@ pipeline {
             }
         }
         stage('Build-frontend'){
+            agent { docker 'openjdk:8-jdk-alpine' }
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
-                    agent { docker 'openjdk:8-jdk-alpine' }
                     sh "docker build . -t frontend-image"
                 }
                 sh "docker frontend-image belenrickmers/front3"
