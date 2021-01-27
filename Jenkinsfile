@@ -60,9 +60,16 @@ pipeline {
                     sh 'chmod +x ./gradlew'
                     sh "./gradlew build"
                     sh "docker build . -t backend-image"
+                    script {
+                        //front-image = docker.build registry1
+                        docker.withRegistry( '', registryCredential ) {
+                        //frontimage.push()
+                        sh "docker push belenrickmers/back3"
+                        }     
+                    }  
                 }
-                sh "docker tag backend-image belenrickmers/back3"
-                sh "docker push belenrickmers/back3"
+                //sh "docker tag backend-image belenrickmers/back3"
+                //sh "docker push belenrickmers/back3"
                 echo "voy a salir de Build-backend"
             }
         }
