@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        registry1 = "belenrickmers/front3"
-        registry2 = "belenrickmers/back3"
+        registry1 = "front3"
+        registry2 = "back3"
         registryCredential = 'docker'
         frontImage = ''
         backImage = ''
@@ -38,6 +38,7 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
+                    sh "chmod +x docker"
                     sh "docker build . -t front3"
                     script {
                         frontImage = docker.build registry1 + ":$BUILD_NUMBER"
