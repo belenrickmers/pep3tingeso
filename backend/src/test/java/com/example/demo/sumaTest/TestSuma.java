@@ -1,20 +1,15 @@
 package com.example.demo.sumaTest;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 import com.example.demo.model.Suma;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import netscape.javascript.JSObject;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.web.context.WebApplicationContext;
-import netscape.javascript.JSObject;
 
 public class TestSuma extends AbstractTest {
     @Override
