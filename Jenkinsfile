@@ -16,8 +16,10 @@ pipeline {
                 echo "entre a Test-backend"
                 sh "ls"
                 sh "cd backend"
-                withGradle{
-                    sh "./gradlew test"
+                node{
+                    withGradle{
+                        sh "./gradlew test"
+                    }
                 }
                 sh "cd .."
                 echo "voy a salir de Test-backend"
