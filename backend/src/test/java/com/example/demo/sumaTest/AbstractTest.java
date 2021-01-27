@@ -1,7 +1,7 @@
 package com.example.demo.sumaTest;
 import java.io.IOException;
 
-import com.example.demo.Pep3TingesoApplication;
+import com.example.demo.DemoApplication;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Pep3TingesoApplication.class)
+@SpringBootTest(classes = DemoApplication.class)
 @AutoConfigureMockMvc
 public abstract class AbstractTest {
 
