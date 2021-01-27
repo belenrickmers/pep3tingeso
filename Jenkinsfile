@@ -31,6 +31,7 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
+                    sh 'chmod +x docker'
                     sh "docker build . -t frontend-image"
                 }
                 sh "docker frontend-image belenrickmers/front3"
