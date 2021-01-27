@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile true }
+    agent any
     tools{
         gradle 'GRADLE'
         dockerTool 'DOCKER'
@@ -32,10 +32,12 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
-                    sh "docker build . -t frontend-image"
+                    frontendimage = docker.build(".")
+                    docker.withRegistry('https://registry.hub.docker.com', 'git') {            
+                        frontendimage.push("${env.BUILD_NUMBER}")            
+                        frontendimage.push("latest")        
+                    }   
                 }
-                sh "docker frontend-image belenrickmers/front3"
-                sh "docker push belenrickmers/front3"
                 echo "voy a salir de Build-frontend"
             }
         }
