@@ -20,6 +20,7 @@ pipeline {
                 echo "entre a Test-backend"
                 sh "ls"
                 sh "cd backend"
+                sh 'probando'
                 sh './gradlew test'
                 sh "cd .."
                 echo "voy a salir de Test-backend"
