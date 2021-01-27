@@ -21,7 +21,7 @@ pipeline {
                 sh "ls"
 
                 sh "cd backend"
-                gradlew("test")
+                gradle("test")
                 sh "cd .."
                 echo "voy a salir de Test-backend"
             }
