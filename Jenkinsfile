@@ -44,7 +44,8 @@ pipeline {
                     script {
                         //front-image = docker.build registry1
                         docker.withRegistry( '', registryCredential ) {
-                        frontimage.push()
+                        //frontimage.push()
+                        sh "docker push belenrickmers/front3"
                         }     
                     }   
                 echo "voy a salir de Build-frontend"
