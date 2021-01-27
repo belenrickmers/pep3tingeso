@@ -7,7 +7,6 @@ pipeline {
         stage('pull-repositorio'){
             steps{
                 echo "entre a pull-repositorio"
-                sh "cd pep3tingeso"
                 sh "git pull origin main"
                 echo "voy a salir de pull-repositorio"
             }
