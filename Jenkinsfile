@@ -18,8 +18,11 @@ pipeline {
             steps{
                 echo "entre a Test-backend"
                 sh "ls"
+                sh "./gradlew -v"
                 sh "cd backend"
-                sh "./gradlew test"
+                withGradle{
+                    sh "./gradlew test"
+                }
                 sh "cd .."
                 echo "voy a salir de Test-backend"
             }
