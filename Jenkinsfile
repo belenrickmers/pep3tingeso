@@ -38,7 +38,7 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
-                    sh "chmod +x docker"
+                    sh "chmod +x /var/run/docker.sock"
                     sh "docker build . -t front3"
                     script {
                         frontImage = docker.build registry1 + ":$BUILD_NUMBER"
