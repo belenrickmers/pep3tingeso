@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     tools{
         gradle 'GRADLE'
         dockerTool 'DOCKER'
@@ -32,7 +32,6 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
-                    agent { dockerfile true }
                     sh "docker build . -t frontend-image"
                 }
                 sh "docker frontend-image belenrickmers/front3"
