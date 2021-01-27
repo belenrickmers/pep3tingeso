@@ -43,7 +43,8 @@ pipeline {
                         frontImage = docker.build registry1 + ":$BUILD_NUMBER"
                         docker.withRegistry( '', registryCredential ) {
                         frontImage.push()
-                    }     
+                        }     
+                    }
                 }   
                 echo "voy a salir de Build-frontend"
             }
@@ -62,7 +63,7 @@ pipeline {
                 echo "voy a salir de Build-backend"
             }
         }
-        
+
         stage('Deploy-backend'){
             steps{
                 echo "entre a Deploy-backend"
