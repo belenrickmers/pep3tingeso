@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    environment {
+        registry1 = "belenrickmers/back3"
+        registry2 = "belenrickmers/front3"
+        registryCredential = ‘docker’
+        frontImage = ''
+        backImage = ''
+    }
     tools{
         gradle 'GRADLE'
         dockerTool 'DOCKER'
@@ -32,15 +39,16 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
-                    frontendimage = docker.build(".")
-                    docker.withRegistry('https://registry.hub.docker.com', 'git') {            
-                        frontendimage.push("${env.BUILD_NUMBER}")            
-                        frontendimage.push("latest")        
-                    }   
-                }
+                    script {
+                        frontImage = docker.build registry1 + ":$BUILD_NUMBER"
+                        docker.withRegistry( '', registryCredential ) {
+                        frontImage.push()
+                    }     
+                }   
                 echo "voy a salir de Build-frontend"
             }
         }
+
         stage('Build-backend'){
             steps{
                 echo "entre a Build-backend"
@@ -54,6 +62,7 @@ pipeline {
                 echo "voy a salir de Build-backend"
             }
         }
+        
         stage('Deploy-backend'){
             steps{
                 echo "entre a Deploy-backend"
