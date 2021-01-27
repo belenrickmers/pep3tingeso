@@ -5,11 +5,12 @@ metadata:
   labels:
     app: backend
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: backend
   ports:
     - name: http
       protocol: TCP
-      port: 1818
+      nodePort: 30000
+      port: 1819
       targetPort: 1818

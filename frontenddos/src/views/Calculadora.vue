@@ -88,7 +88,7 @@ export default {
   methods: {
     calcularSuma: function () {
       axios
-        .post("http://172.17.0.3:1818/suma", {
+        .post("http://161.35.177.151:30000/suma", {
           operando1: this.operando1,
           operando2: this.operando2,
         })
@@ -100,7 +100,7 @@ export default {
 
     calcularFactorial: function () {
       axios
-        .post("localhost:1818/factorial", {
+        .post("http://localhost:30000/factorial", {
           operando: this.operandoFact,
         })
         .then((response) => {
