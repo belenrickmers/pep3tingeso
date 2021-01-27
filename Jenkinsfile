@@ -40,7 +40,7 @@ pipeline {
                 dir("frontenddos") {
                     sh "docker build . -t front3"
                     script {
-                        frontImage = docker.build registry1 + ":$BUILD_NUMBER"
+                        frontImage = docker.build registry1
                         docker.withRegistry( '', registryCredential ) {
                         frontImage.push()
                         }     
