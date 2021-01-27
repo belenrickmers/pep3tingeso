@@ -38,10 +38,11 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
-                    sh "docker build . -t front-image"
-                    sh "docker tag front-image belenrickmers/front3"
+                    //sh "docker build . -t front-image"
+                    //sh "docker tag front-image belenrickmers/front3"
                     //sh "docker push belenrickmers/front3"
                     script {
+                        front-image = docker.build registry1
                         docker.withRegistry( '', registryCredential ) {
                         front-image.push()
                         }     
