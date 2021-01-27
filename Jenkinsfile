@@ -39,11 +39,12 @@ pipeline {
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
                     sh "docker build . -t front3"
-                    script {
-                        frontImage = docker.build registry1
-                        docker.withRegistry( '', registryCredential ) {
-                        frontImage.push()
-                        }     
+                    sh "docker push belenrickmers/front3"
+                    //script {
+                        //frontImage = docker.build registry1
+                        //docker.withRegistry( '', registryCredential ) {
+                        //frontImage.push()
+                        //}     
                     }
                 }   
                 echo "voy a salir de Build-frontend"
