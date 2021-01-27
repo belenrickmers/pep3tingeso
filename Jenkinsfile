@@ -77,8 +77,8 @@ pipeline {
         stage('Deploy-backend'){
             steps{
                 echo "entre a Deploy-backend"
-                sh "kubeclt delete deployment backend-deployment.yaml"
-                sh "kubectl delete service backend-service.yaml"
+                sh "kubectl delete deployment backend-deployment"
+                sh "kubectl delete service localhost"
                 sh "kubectl apply -f backend-deployment.yaml"
                 sh "kubectl apply -f backend-service.yaml"
                 echo "voy a salir de Deploy-backend"
@@ -87,8 +87,8 @@ pipeline {
         stage('Deploy-frontend'){
             steps{
                 echo "entre a Deploy-frontend"
-                sh "kubeclt delete deployment frontend-deployment.yaml"
-                sh "kubectl delete service frontend-service.yaml"
+                sh "kubectl delete deployment frontend-deployment"
+                sh "kubectl delete service frontend-service"
                 sh "kubectl apply -f frontend-deployment.yaml"
                 sh "kubectl apply -f frontend-service.yaml"
                 echo "voy a salir de Deploy-frontend"
