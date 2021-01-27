@@ -24,30 +24,30 @@ pipeline {
                     sh 'chmod +x ./gradlew'
                     sh './gradlew test'
                 }
-                sh "cd .."
                 echo "voy a salir de Test-backend"
             }
         }
         stage('Build-frontend'){
             steps{
                 echo "entre a Build-frontend"
-                sh "cd frontenddos"
-                sh "docker build . -t frontend-image"
-                sh "docker frontend-image belenrickmers/front"
-                sh "docker push belenrickmers/front"
-                sh "cd .."
+                dir("frontenddos") {
+                    sh "docker build . -t frontend-image"
+                }
+                sh "docker frontend-image belenrickmers/front3"
+                sh "docker push belenrickmers/front3"
                 echo "voy a salir de Build-frontend"
             }
         }
         stage('Build-backend'){
             steps{
                 echo "entre a Build-backend"
-                sh "cd backend"
-                sh "./gradlew build"
-                sh "docker build . -t backend-image"
-                sh "docker backend-image belenrickmers/back"
-                sh "docker push belenrickmers/back"
-                sh "cd .."
+                dir("backend") {
+                    sh 'chmod +x ./gradlew'
+                    sh "./gradlew build"
+                    sh "docker build . -t backend-image"
+                }
+                sh "docker backend-image belenrickmers/back3"
+                sh "docker push belenrickmers/back3"
                 echo "voy a salir de Build-backend"
             }
         }

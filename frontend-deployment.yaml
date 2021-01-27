@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: belenrickmers/front1
+          image: belenrickmers/front3
           ports:
             - name: http
               containerPort: 8080
