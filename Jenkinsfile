@@ -32,6 +32,7 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
+                    agent { dockerfile true }
                     sh "docker build . -t frontend-image"
                 }
                 sh "docker frontend-image belenrickmers/front3"
