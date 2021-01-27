@@ -76,22 +76,26 @@ pipeline {
 
         stage('Deploy-backend'){
             steps{
-                echo "entre a Deploy-backend"
-                //sh "kubectl delete deployment backend-deployment"
-                //sh "kubectl delete service localhost"
-                sh "kubectl apply -f backend-deployment.yaml"
-                sh "kubectl apply -f backend-service.yaml"
-                echo "voy a salir de Deploy-backend"
+                dir("pep3tingeso"){
+                    echo "entre a Deploy-backend"
+                    //sh "kubectl delete deployment backend-deployment"
+                    //sh "kubectl delete service localhost"
+                    sh "kubectl apply -f backend-deployment.yaml"
+                    sh "kubectl apply -f backend-service.yaml"
+                    echo "voy a salir de Deploy-backend"
+                }
             }
         }
         stage('Deploy-frontend'){
             steps{
-                echo "entre a Deploy-frontend"
-                //sh "kubectl delete deployment frontend-deployment"
-                //sh "kubectl delete service frontend-service"
-                sh "kubectl apply -f frontend-deployment.yaml"
-                sh "kubectl apply -f frontend-service.yaml"
-                echo "voy a salir de Deploy-frontend"
+                dir("pep3tingeso"){
+                    echo "entre a Deploy-frontend"
+                    //sh "kubectl delete deployment frontend-deployment"
+                    //sh "kubectl delete service frontend-service"
+                    sh "kubectl apply -f frontend-deployment.yaml"
+                    sh "kubectl apply -f frontend-service.yaml"
+                    echo "voy a salir de Deploy-frontend"
+                }
             }
         }
         stage('Build') {
