@@ -15,7 +15,7 @@ pipeline {
             steps{
                 echo "entre a Test-backend"
                 sh "cd backend"
-                sh "./gradlew test"
+                sh "./gradle test"
                 sh "cd .."
                 echo "voy a salir de Test-backend"
             }
