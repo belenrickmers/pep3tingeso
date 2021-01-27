@@ -100,7 +100,7 @@ export default {
 
     calcularFactorial: function () {
       axios
-        .post("http://localhost:30000/factorial", {
+        .post("http://161.35.177.151:30000/factorial", {
           operando: this.operandoFact,
         })
         .then((response) => {
