@@ -40,12 +40,11 @@ pipeline {
                 dir("frontenddos") {
                     sh "docker build . -t front-image"
                     sh "docker tag front-image belenrickmers/front3"
-                    sh "docker push belenrickmers/front3"
-                    //script {
-                        //frontImage = docker.build registry1
-                        //docker.withRegistry( '', registryCredential ) {
-                        //frontImage.push()
-                        //}     
+                    //sh "docker push belenrickmers/front3"
+                    script {
+                        docker.withRegistry( '', registryCredential ) {
+                        front-image.push()
+                        }     
                     }   
                 echo "voy a salir de Build-frontend"
             }
