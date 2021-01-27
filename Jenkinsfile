@@ -3,7 +3,7 @@ pipeline {
     environment {
         registry1 = "belenrickmers/back3"
         registry2 = "belenrickmers/front3"
-        registryCredential = ‘docker’
+        registryCredential = 'docker'
         frontImage = ''
         backImage = ''
     }
