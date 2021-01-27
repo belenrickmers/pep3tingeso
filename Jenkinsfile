@@ -45,8 +45,7 @@ pipeline {
                         //docker.withRegistry( '', registryCredential ) {
                         //frontImage.push()
                         //}     
-                    }
-                }   
+                    }   
                 echo "voy a salir de Build-frontend"
             }
         }
