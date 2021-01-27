@@ -47,6 +47,7 @@ pipeline {
                         }     
                     }   
                 echo "voy a salir de Build-frontend"
+                }
             }
         }
 
