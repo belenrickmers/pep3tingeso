@@ -27,8 +27,10 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no root@161.35.177.151'
                     script{
                         sh 'ssh root@161.35.177.151 kubectl'
-                        sh bash -c " cd miau
-                        ls"
+                        sh '''
+                            cd miau
+                            ls
+                        '''
                         sh 'ssh root@161.35.177.151 cd miau && ls && kubectl apply -f backend-deployment.yaml'
                         sh 'ssh root@161.35.177.151 ls && cd pep3tingeso && ls && kubectl apply -f backend-deployment.yaml'
                     }
