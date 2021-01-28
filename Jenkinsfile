@@ -84,8 +84,10 @@ pipeline {
                 //sh "kubectl delete deployment backend-deployment"
                 //sh "kubectl delete service localhost"
                 sh "ls"
-                sh "kubectl apply -f backend-deployment.yaml"
-                sh "kubectl apply -f backend-service.yaml"
+                sshagent(['server']){
+                    sh "ssh root@159.203.75.95 kubectl apply -f backend-deployment.yaml"
+                    sh "ssh root@159.203.75.95 kubectl apply -f backend-service.yaml"
+                }
                 echo "voy a salir de Deploy-backend"
             }
         }
