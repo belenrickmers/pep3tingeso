@@ -96,6 +96,9 @@ pipeline {
                 //sh "kubectl delete service frontend-service"
                 sh "kubectl apply -f frontend-deployment.yaml"
                 sh "kubectl apply -f frontend-service.yaml"
+                sh "ls"
+                sh "kubectl get deployments"
+                sh "kubectl get services"
                 echo "voy a salir de Deploy-frontend"
             }
         }
