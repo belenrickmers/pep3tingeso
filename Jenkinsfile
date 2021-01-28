@@ -59,7 +59,7 @@ pipeline {
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
                     sh "docker build . -t frontimage"
-                    //sh "docker tag front-image belenrickmers/front3"
+                    sh "docker tag frontimage belenrickmers/front3"
                     //sh "docker push belenrickmers/front3"
                     script {
                         //front-image = docker.build registry1
