@@ -21,6 +21,7 @@ pipeline {
                 echo "entre a pull-repositorio"
                 sh "git pull origin main"
                 echo "voy a salir de pull-repositorio"
+                sh "minikube start"
                 sh "ls"
             }
         }
@@ -80,8 +81,6 @@ pipeline {
             steps{
                 sh "ls"
                 echo "entre a Deploy-backend"
-                sh "cp $HOME/.kube/config /home/jenkins/.kube/"
-                sh "chmod 777 /home/jenkins/.kube/config"
                 //sh "kubectl delete deployment backend-deployment"
                 //sh "kubectl delete service localhost"
                 sh "ls"
