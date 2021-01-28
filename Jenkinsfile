@@ -22,14 +22,14 @@ pipeline {
                 sh "git pull origin main"
                 echo "voy a salir de pull-repositorio"
                 //sh "kubectl cluster-info"
-                sh "minikube start"
-                //sshagent(credentials: ['servertingeso']){
-                    //sh 'ssh -o StrictHostKeyChecking=no root@161.35.177.151'
-                //    script{
-                //        sh 'ssh root@161.35.177.151 ls'
-                //    }
-                //}
-                //sh "prueba detente"
+                //sh "minikube start"
+                sshagent(credentials: ['servertingeso']){
+                    sh 'ssh -o StrictHostKeyChecking=no root@161.35.177.151'
+                    script{
+                        sh 'ssh root@161.35.177.151 ls'
+                    }
+                }
+                sh "prueba detente"
                 //sh "ls"
             }
         }
