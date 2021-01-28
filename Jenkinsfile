@@ -19,8 +19,11 @@ pipeline {
                 sh "ls"
                 echo "PORFAVORFUNCIONA"
                 echo "entre a pull-repositorio"
-                sh "git pull origin main"
-                sh "cat /pep3tingeso@tmp/backend-deployment.yaml"
+                dir('pep3tingeso'){
+                    sh "git pull origin main"
+                    sh "cat backend-deployment.yaml"
+                }
+                
                 echo "voy a salir de pull-repositorio"
                 sh "kubectl get deployments"
                 sh "kubectl get namespaces"
