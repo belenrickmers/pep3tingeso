@@ -23,9 +23,9 @@ pipeline {
                 echo "voy a salir de pull-repositorio"
                 //sh "kubectl cluster-info"
                 sshagent(credentials: ['servertingeso']){
-                    sh 'ssh -tt -o StrictHostKeyChecking=no root@161.35.177.151'
+                    sh 'ssh -tt -o StrictHostKeyChecking=no root@161.35.177.151 exit'
                     script{
-                        sh 'ssh root@161.35.177.151 ls'
+                        sh 'ssh -tt root@161.35.177.151 ls exit'
                     }
                 }
                 sh "prueba detente"
