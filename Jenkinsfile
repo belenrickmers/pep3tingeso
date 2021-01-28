@@ -22,13 +22,13 @@ pipeline {
                 sh "git pull origin main"
                 echo "voy a salir de pull-repositorio"
                 //sh "kubectl cluster-info"
-                sshagent(credentials: ['servertingeso']){
+                //sshagent(credentials: ['servertingeso']){
                     //sh 'ssh -o StrictHostKeyChecking=no root@161.35.177.151'
-                    script{
-                        sh 'ssh root@161.35.177.151 ls'
-                    }
+                //    script{
+                //        sh 'ssh root@161.35.177.151 ls'
+                //    }
                 }
-                sh "prueba detente"
+                //sh "prueba detente"
                 sh "ls"
             }
         }
@@ -91,10 +91,12 @@ pipeline {
                 //sh "kubectl delete deployment backend-deployment"
                 //sh "kubectl delete service localhost"
                 sh "ls"
-                sshagent(credentials: ['serverdos']){
-                    sh "ssh root@159.203.75.95 kubectl apply -f backend-deployment.yaml"
-                    sh "ssh root@159.203.75.95 kubectl apply -f backend-service.yaml"
-                }
+                //sshagent(credentials: ['serverdos']){
+                //    sh "ssh root@159.203.75.95 kubectl apply -f backend-deployment.yaml"
+                //    sh "ssh root@159.203.75.95 kubectl apply -f backend-service.yaml"
+                //}
+                sh "kubectl apply -f backend-deployment.yaml"
+                sh "kubectl apply -f backend-service.yaml"
                 echo "voy a salir de Deploy-backend"
             }
         }
