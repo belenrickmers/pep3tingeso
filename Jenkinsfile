@@ -21,6 +21,7 @@ pipeline {
                 echo "entre a pull-repositorio"
                 sh "git pull origin main"
                 echo "voy a salir de pull-repositorio"
+                sh "kubectl cluster-info"
                 sh "ls"
             }
         }
