@@ -21,7 +21,7 @@ pipeline {
                 echo "entre a pull-repositorio"
                 dir('pep3tingeso'){
                     sh "git pull origin main"
-                    sh "cat backend-deployment.yaml"
+                    //sh "cat backend-deployment.yaml"
                 }
                 
                 echo "voy a salir de pull-repositorio"
