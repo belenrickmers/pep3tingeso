@@ -20,7 +20,7 @@ pipeline {
                 echo "PORFAVORFUNCIONA"
                 echo "entre a pull-repositorio"
                 sh "git pull origin main"
-                sh "cat /pep3tingeso/backend-deployment.yaml"
+                sh "cat /pep3tingeso@tmp/backend-deployment.yaml"
                 echo "voy a salir de pull-repositorio"
                 sh "kubectl get deployments"
                 sh "kubectl get namespaces"
