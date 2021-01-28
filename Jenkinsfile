@@ -76,6 +76,7 @@ pipeline {
 
         stage('Deploy-backend'){
             steps{
+                sh "ls"
                 dir("pep3tingeso"){
                     echo "entre a Deploy-backend"
                     //sh "kubectl delete deployment backend-deployment"
