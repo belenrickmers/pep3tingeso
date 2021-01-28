@@ -27,7 +27,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no root@161.35.177.151'
                     script{
                         sh 'ssh root@161.35.177.151 kubectl'
-                        sh 'ssh root@161.35.177.151 ls && cd pep3tingeso && kubectl apply -f backend-deployment.yaml'
+                        sh 'ssh root@161.35.177.151 ls && cd pep3tingeso && ls && kubectl apply -f backend-deployment.yaml'
                     }
                 }
                 sh "prueba detente"
