@@ -27,9 +27,9 @@ pipeline {
                 //    script{
                 //        sh 'ssh root@161.35.177.151 ls'
                 //    }
-                }
-                sh "prueba detente"
-                sh "ls"
+                //}
+                //sh "prueba detente"
+                //sh "ls"
             }
         }
         stage('Test-backend'){
