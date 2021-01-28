@@ -22,6 +22,7 @@ pipeline {
                 sh "git pull origin main"
                 echo "voy a salir de pull-repositorio"
                 sh "kubectl get deployments"
+                sh "kubectl get namespaces"
                 //sh "kubectl cluster-info"
                 //sh "minikube start"
                 sshagent(credentials: ['serverpep3tingeso']){
