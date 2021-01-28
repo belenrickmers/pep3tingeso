@@ -26,7 +26,8 @@ pipeline {
                 sshagent(credentials: ['servertingeso']){
                     sh 'ssh -o StrictHostKeyChecking=no root@161.35.177.151'
                     script{
-                        sh 'ssh root@161.35.177.151 kubectl apply -f /pep3tingeso/backend-deployment.yaml'
+                        sh 'ssh root@161.35.177.151 cd pep3tingeso'
+                        sh 'ssh root@161.35.177.151 kubectl apply -f backend-deployment.yaml'
                     }
                 }
                 sh "prueba detente"
