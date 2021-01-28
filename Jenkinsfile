@@ -16,10 +16,12 @@ pipeline {
     stages {
         stage('pull-repositorio'){
             steps{
+                sh "ls"
                 echo "PORFAVORFUNCIONA"
                 echo "entre a pull-repositorio"
                 sh "git pull origin main"
                 echo "voy a salir de pull-repositorio"
+                sh "ls"
             }
         }
         stage('Test-backend'){
