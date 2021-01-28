@@ -27,7 +27,6 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no root@161.35.177.151'
                     script{
                         sh 'ssh root@161.35.177.151 kubectl'
-                        sh """
                         sh """ssh root@161.35.177.151 <<EOF
                         cd miau
                         do ls
