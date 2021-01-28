@@ -31,7 +31,7 @@ pipeline {
                     script{
                         sh 'ssh root@159.203.75.95 kubectl'
                         //sh 'ssh root@159.203.75.95 cd miau && ls && kubectl apply -f backend-deployment.yaml'
-                        sh 'ssh root@159.203.75.95 ls && cd pep3tingeso && ls && kubectl apply -f /pep3tingeso/backend-deployment.yaml'
+                        sh 'ssh root@159.203.75.95 ls && cd pep3tingeso && ls && kubectl apply -f backend-deployment.yaml'
                     }
                 }
                 sh "prueba detente"
