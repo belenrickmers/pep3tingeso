@@ -99,6 +99,7 @@ pipeline {
                 sh "ls"
                 sh "kubectl get deployments"
                 sh "kubectl get services"
+                sh "kubectl config view | grep namespace"
                 echo "voy a salir de Deploy-frontend"
             }
         }
