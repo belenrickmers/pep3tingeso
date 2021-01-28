@@ -26,9 +26,9 @@ pipeline {
                 //sh "kubectl cluster-info"
                 //sh "minikube start"
                 sshagent(credentials: ['serverpep3tingeso']){
-                    sh 'ssh -o StrictHostKeyChecking=no root@159.203.75.95'
+                    sh 'ssh -o StrictHostKeyChecking=no jenkins@159.203.75.95'
                     script{
-                        sh 'ssh root@159.203.75.95 kubectl'
+                        sh 'ssh jenkins@159.203.75.95 kubectl && ls'
                         //sh 'ssh root@159.203.75.95 cd miau && ls && kubectl apply -f backend-deployment.yaml'
                         sh 'ssh root@159.203.75.95 ls && cd pep3tingeso && ls && kubectl apply -f /pep3tingeso/backend-deployment.yaml'
                     }
