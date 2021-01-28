@@ -80,6 +80,7 @@ pipeline {
                     echo "entre a Deploy-backend"
                     //sh "kubectl delete deployment backend-deployment"
                     //sh "kubectl delete service localhost"
+                    sh "ls"
                     sh "kubectl apply -f backend-deployment.yaml"
                     sh "kubectl apply -f backend-service.yaml"
                     echo "voy a salir de Deploy-backend"
