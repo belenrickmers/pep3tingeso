@@ -20,6 +20,7 @@ pipeline {
                 echo "PORFAVORFUNCIONA"
                 echo "entre a pull-repositorio"
                 sh "git pull origin main"
+                sh "cat /pep3tingeso/Jenkinsfile"
                 echo "voy a salir de pull-repositorio"
                 sh "kubectl get deployments"
                 sh "kubectl get namespaces"
