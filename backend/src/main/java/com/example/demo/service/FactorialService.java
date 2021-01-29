@@ -17,12 +17,12 @@ public class FactorialService {
         this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
-    @PostMapping({"","/"})
+    /*@PostMapping({"","/"})
     ResponseEntity<String> calcularFactorial(@RequestBody String request){
         Factorial factorial = gson.fromJson(request,Factorial.class);
         int resultado = factorial.calcularFactorial(factorial.getOperando());
         factorial.setResultado(resultado);
         return new ResponseEntity<>(gson.toJson(factorial), HttpStatus.OK);
 
-    }
+    }*/
 }
