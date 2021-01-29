@@ -107,8 +107,11 @@ pipeline {
                 //    sh "ssh root@159.203.75.95 kubectl apply -f backend-service.yaml"
                 //}
                 dir('/var/lib/jenkins/workspace/PEP3/'){
-                    sh "kubectl delete backend-deployment"
-                    sh "kubectl delete localhost"
+                    sh "kubectl get deployments"
+                    sh "kubectl get services"
+                    sh "cae"
+                    //sh "kubectl delete backend-deployment"
+                    //sh "kubectl delete localhost"
                     sh "kubectl apply -f backend-deployment.yaml"
                     sh "kubectl apply -f backend-service.yaml"
                 }
