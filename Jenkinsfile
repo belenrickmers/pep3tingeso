@@ -19,10 +19,9 @@ pipeline {
                 sh "ls"
                 echo "PORFAVORFUNCIONA"
                 echo "entre a pull-repositorio"
-                dir('pep3tingeso'){
-                    sh "git pull origin main"
-                    //sh "cat backend-deployment.yaml"
-                }
+                //dir('pep3tingeso'){
+                //    sh "git pull origin main"
+                //}
                 
                 echo "voy a salir de pull-repositorio"
                 sh "kubectl get deployments"
@@ -38,7 +37,6 @@ pipeline {
                 //        sh 'ssh root@159.203.75.95 ls && cd pep3tingeso && ls && kubectl apply -f /pep3tingeso/backend-deployment.yaml'
                 //    }
                 //}
-                //sh "prueba detente"
                 //sh "ls"
             }
         }
