@@ -111,8 +111,8 @@ pipeline {
                     sh "kubectl get services"
                     //sh "kubectl delete backend-deployment"
                     //sh "kubectl delete localhost"
-                    sh "kubectl apply --namespace=default -f backend-deployment.yaml"
-                    sh "kubectl apply --namespace=default -f backend-service.yaml"
+                    sh "kubectl replace -f backend-deployment.yaml"
+                    sh "kubectl replace -f backend-service.yaml"
                 }
                 echo "voy a salir de Deploy-backend"
             }
