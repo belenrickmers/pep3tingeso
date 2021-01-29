@@ -41,11 +41,23 @@ pipeline {
                 //sh "ls"
             //}
         //}
-        stage('Lint'){
-            steps{
-                withSonarQubeEnv('SONARQUBE') { // Will pick the global server connection you have configured
-                    sh './gradlew sonarqube'
+        //stage('Lint'){
+        //    steps{
+        //        withSonarQubeEnv('SONARQUBE') { // Will pick the global server connection you have configured
+        //            sh './gradlew sonarqube'
+        //        }
+        //    }
+        //}
+        stage('Mega-Linter') {
+            agent {
+                docker {
+                    image 'nvuillam/mega-linter:v4'
+                    args "-e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/tmp/lint --entrypoint=''"
+                    reuseNode true
                 }
+            }
+            steps {
+                sh '/entrypoint.sh'
             }
         }
         stage('Test-backend'){
