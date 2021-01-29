@@ -58,6 +58,7 @@ pipeline {
             steps{
                 echo "entre a Build-frontend"
                 dir("frontenddos") {
+                    sh "cat /var/lib/jenkins/workspace/PEP3/frontenddos/src/views/Calculadora.vue"
                     sh "docker build . -t frontimage"
                     sh "docker tag frontimage belenrickmers/front3"
                     //sh "docker push belenrickmers/front3"
