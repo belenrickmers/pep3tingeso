@@ -14,18 +14,18 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('pull-repositorio'){
-            steps{
-                sh "ls"
-                echo "PORFAVORFUNCIONA"
-                echo "entre a pull-repositorio"
+        //stage('pull-repositorio'){
+            //steps{
+                //sh "ls"
+                //echo "PORFAVORFUNCIONA"
+                //echo "entre a pull-repositorio"
                 //dir('pep3tingeso'){
                 //    sh "git pull origin main"
                 //}
                 
-                echo "voy a salir de pull-repositorio"
-                sh "kubectl get deployments"
-                sh "kubectl get namespaces"
+                //echo "voy a salir de pull-repositorio"
+                //sh "kubectl get deployments"
+                //sh "kubectl get namespaces"
                 //sh "kubectl apply -f /pep3tingeso/backend-deployment.yaml"
                 //sh "kubectl cluster-info"
                 //sh "minikube start"
@@ -38,7 +38,10 @@ pipeline {
                 //    }
                 //}
                 //sh "ls"
-            }
+            //}
+        //}
+        stage('Lint'){
+            sh "./gradlew lint"
         }
         stage('Test-backend'){
             steps{
