@@ -17,6 +17,7 @@ spec:
       containers:
         - name: frontend
           image: belenrickmers/front3
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8080
