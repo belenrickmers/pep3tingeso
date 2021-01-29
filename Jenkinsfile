@@ -77,7 +77,7 @@ pipeline {
         stage('Build-backend'){
             steps{
                 echo "entre a Build-backend"
-                dir("backend") {
+                dir("/var/lib/jenkins/workspace/PEP3/backend") {
                     sh 'chmod +x ./gradlew'
                     sh "./gradlew build"
                     sh "docker build . -t backend-image"
@@ -106,8 +106,10 @@ pipeline {
                 //    sh "ssh root@159.203.75.95 kubectl apply -f backend-deployment.yaml"
                 //    sh "ssh root@159.203.75.95 kubectl apply -f backend-service.yaml"
                 //}
-                sh "kubectl apply -f backend-deployment.yaml"
-                sh "kubectl apply -f backend-service.yaml"
+                dir('/var/lib/jenkins/workspace/PEP3/'){
+                    sh "kubectl apply -f backend-deployment.yaml"
+                    sh "kubectl apply -f backend-service.yaml"
+                }
                 echo "voy a salir de Deploy-backend"
             }
         }
@@ -116,8 +118,10 @@ pipeline {
                 echo "entre a Deploy-frontend"
                 //sh "kubectl delete deployment frontend-deployment"
                 //sh "kubectl delete service frontend-service"
-                sh "kubectl apply -f frontend-deployment.yaml"
-                sh "kubectl apply -f frontend-service.yaml"
+                dir('/var/lib/jenkins/workspace/PEP3/'){
+                    sh "kubectl apply -f frontend-deployment.yaml"
+                    sh "kubectl apply -f frontend-service.yaml"
+                }
                 sh "ls"
                 sh "kubectl get deployments"
                 sh "kubectl get services"
@@ -125,7 +129,7 @@ pipeline {
                 echo "voy a salir de Deploy-frontend"
             }
         }
-        stage('Build') {
+        stage('Fin') {
             steps {
                 echo 'FIN'
             }
