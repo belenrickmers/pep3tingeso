@@ -57,7 +57,10 @@ pipeline {
             //    }
             //}
             steps {
-                sh "mega-linter-runner"
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "mega-linter-runner"
+                }
+
                 //sh '/entrypoint.sh'
 
             }
