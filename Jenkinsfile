@@ -49,15 +49,17 @@ pipeline {
         //    }
         //}
         stage('Mega-Linter') {
-            agent {
-                docker {
-                    image 'nvuillam/mega-linter:v4'
-                    args "-e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/tmp/lint --entrypoint=''"
-                    reuseNode true
-                }
-            }
+            //agent {
+            //    docker {
+            //        image 'nvuillam/mega-linter:v4'
+            //        args "-e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/tmp/lint --entrypoint=''"
+            //        reuseNode true
+            //    }
+            //}
             steps {
-                sh '/entrypoint.sh'
+                sh "mega-linter-runner"
+                //sh '/entrypoint.sh'
+
             }
         }
         stage('Test-backend'){
@@ -65,7 +67,7 @@ pipeline {
                 echo "entre a Test-backend"
                 echo "entre a Test-backend"
                 sh "ls"
-                dir("backend") {
+                dir("/var/lib/jenkins/workspace/PEP3/backend") {
                     sh 'chmod +x ./gradlew'
                     sh './gradlew test'
                 }
