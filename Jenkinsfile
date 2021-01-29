@@ -109,11 +109,10 @@ pipeline {
                 dir('/var/lib/jenkins/workspace/PEP3/'){
                     sh "kubectl get deployments"
                     sh "kubectl get services"
-                    sh "cae"
                     //sh "kubectl delete backend-deployment"
                     //sh "kubectl delete localhost"
-                    sh "kubectl apply -f backend-deployment.yaml"
-                    sh "kubectl apply -f backend-service.yaml"
+                    sh "kubectl apply -f -n default backend-deployment.yaml"
+                    sh "kubectl apply -f -n default backend-service.yaml"
                 }
                 echo "voy a salir de Deploy-backend"
             }
