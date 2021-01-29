@@ -15,32 +15,6 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('pull-repositorio'){
-            steps{
-                //sh "ls"
-                //echo "PORFAVORFUNCIONA"
-                //echo "entre a pull-repositorio"
-                dir('pep3tingeso'){
-                    sh "git pull origin main"
-                }
-                
-                //echo "voy a salir de pull-repositorio"
-                //sh "kubectl get deployments"
-                //sh "kubectl get namespaces"
-                //sh "kubectl apply -f /pep3tingeso/backend-deployment.yaml"
-                //sh "kubectl cluster-info"
-                //sh "minikube start"
-                //sshagent(credentials: ['serverpep3tingeso']){
-                //    sh 'ssh -o StrictHostKeyChecking=no root@159.203.75.95'
-                //    script{
-                //        sh 'ssh root@159.203.75.95 kubectl'
-                        //sh 'ssh root@159.203.75.95 cd miau && ls && kubectl apply -f backend-deployment.yaml'
-                //        sh 'ssh root@159.203.75.95 ls && cd pep3tingeso && ls && kubectl apply -f /pep3tingeso/backend-deployment.yaml'
-                //    }
-                //}
-                //sh "ls"
-            }
-        }
         //stage('Lint'){
         //    steps{
         //        withSonarQubeEnv('SONARQUBE') { // Will pick the global server connection you have configured
