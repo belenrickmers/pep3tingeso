@@ -123,8 +123,8 @@ pipeline {
                 //sh "kubectl delete deployment frontend-deployment"
                 //sh "kubectl delete service frontend-service"
                 dir('/var/lib/jenkins/workspace/PEP3/'){
-                    sh "kubectl delete frontend-deployment"
-                    sh "kubectl delete frontend-service"
+                    //sh "kubectl delete frontend-deployment"
+                    //sh "kubectl delete frontend-service"
                     sh "kubectl apply -f frontend-deployment.yaml"
                     sh "kubectl apply -f frontend-service.yaml"
                 }
