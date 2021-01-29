@@ -41,7 +41,9 @@ pipeline {
             //}
         //}
         stage('Lint'){
-            sh "./gradlew lint"
+            steps{
+                
+            }
         }
         stage('Test-backend'){
             steps{
