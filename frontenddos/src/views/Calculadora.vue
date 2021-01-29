@@ -99,14 +99,14 @@ export default {
     },
 
     calcularFactorial: function () {
-    //  axios
-    //    .post("http://159.203.75.95:30000/factorial", {
-    //      operando: this.operandoFact,
-    //    })
-    //    .then((response) => {
-    //      this.resultadoFact = response.data.resultado;
-    //    });
-    //  console.log(this.resultadoFact);
+      axios
+        .post("http://159.203.75.95:30000/factorial", {
+          operando: this.operandoFact,
+        })
+        .then((response) => {
+          this.resultadoFact = response.data.resultado;
+        });
+      console.log(this.resultadoFact);
     },
 
     save(date) {
