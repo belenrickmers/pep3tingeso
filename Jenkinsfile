@@ -15,14 +15,14 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        //stage('pull-repositorio'){
-            //steps{
+        stage('pull-repositorio'){
+            steps{
                 //sh "ls"
                 //echo "PORFAVORFUNCIONA"
                 //echo "entre a pull-repositorio"
-                //dir('pep3tingeso'){
-                //    sh "git pull origin main"
-                //}
+                dir('pep3tingeso'){
+                    sh "git pull origin main"
+                }
                 
                 //echo "voy a salir de pull-repositorio"
                 //sh "kubectl get deployments"
@@ -39,8 +39,8 @@ pipeline {
                 //    }
                 //}
                 //sh "ls"
-            //}
-        //}
+            }
+        }
         //stage('Lint'){
         //    steps{
         //        withSonarQubeEnv('SONARQUBE') { // Will pick the global server connection you have configured
