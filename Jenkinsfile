@@ -9,6 +9,7 @@ pipeline {
     }
     tools{
         gradle 'GRADLE'
+        sonarqube 'SONARQUBE'
     }
     options {
         skipStagesAfterUnstable()
