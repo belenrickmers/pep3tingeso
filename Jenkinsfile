@@ -9,7 +9,7 @@ pipeline {
     }
     tools{
         gradle 'GRADLE'
-        hudson.plugins.sonar.SonarRunnerInstallation 'SONARQUBE'
+        //hudson.plugins.sonar.SonarRunnerInstallation 'SONARQUBE'
     }
     options {
         skipStagesAfterUnstable()
