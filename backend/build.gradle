@@ -2,7 +2,6 @@ plugins {
 	id 'org.springframework.boot' version '2.4.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-	id "nebula.lint" version '16.17.0'
 }
 
 group = 'com.example'
@@ -11,9 +10,6 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
-	maven {
-      url "https://plugins.gradle.org/m2/"
-    }
 }
 
 dependencies {
@@ -28,7 +24,6 @@ dependencies {
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testRuntime ('org.springframework.boot:spring-boot-starter-test')
-	classpath "com.netflix.nebula:gradle-lint-plugin:16.17.0"
 }
 
 test {
