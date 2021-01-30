@@ -41,7 +41,7 @@
         </v-form>
       </v-card>
 
-      <!-- <v-form>
+      <v-form>
         <v-card class="pa-lg-4 mx-lg-5" width='300'>
             <v-card-title class="justify-center"> Calculadora factorial </v-card-title>
               <v-text-field
@@ -66,7 +66,7 @@
                 Calcular factorial
               </v-btn>
         </v-card>
-      </v-form>-->
+      </v-form>
     </v-row>
     <p> probando jenkins </p>
   </v-container>
